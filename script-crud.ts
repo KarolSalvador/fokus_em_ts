@@ -45,6 +45,15 @@ const atualizarUI = () => {
         </svg>
     `
     const ulTarefas = document.querySelector('.app__section-task-list')
+
+    const btnAdicionarTarefa = document.querySelector<HTMLButtonElement>('.app__button--add-task')
+
+    if (!btnAdicionarTarefa) {
+        throw Error("Caro colega, o elemento btnAdicionarTarefa não foi encontrado. Favor rever.")
+    }
+
+    btnAdicionarTarefa.onclick
+
     if(ulTarefas) {
         ulTarefas.innerHTML = ''        
     }

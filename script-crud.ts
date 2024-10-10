@@ -47,6 +47,7 @@ const atualizarUI = () => {
     const ulTarefas = document.querySelector('.app__section-task-list')
     const formAdicionarTarefa = document.querySelector<HTMLFormElement>('.app__form-add-task')
     const btnAdicionarTarefa = document.querySelector<HTMLButtonElement>('.app__button--add-task')
+    const textArea = document.querySelector<HTMLTextAreaElement>('.app__form-textarea')
 
     if (!btnAdicionarTarefa) {
         throw Error("Caro colega, o elemento btnAdicionarTarefa não foi encontrado. Favor rever.")

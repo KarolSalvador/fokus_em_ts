@@ -34,6 +34,13 @@ const selecionarTarefa = (estado: EstadoAplicacao, tarefa: Tarefa) : EstadoAplic
     }
 }
 
+const adicionarTarefa = (estado: EstadoAplicacao, tarefa: Tarefa) : EstadoAplicacao => {
+    return {
+        ...estado,
+        tarefas: [...estado.tarefas, tarefa]
+    }
+}
+
 const atualizarUI = () => {
     const taskIconSvg = `
         <svg class="app__section-task-icon-status" width="24" height="24" viewBox="0 0 24 24"
@@ -55,6 +62,16 @@ const atualizarUI = () => {
 
     btnAdicionarTarefa.onclick = () => {
         formAdicionarTarefa?.classList.toggle('hidden')
+    }
+
+    formAdicionarTarefa!.onsubmit = (evento) => {
+        evento.preventDefault()
+        const descricao = textArea!.value
+        estadoInicial = adicionarTarefa(estadoInicial, {
+            descricao,
+            concluida: false
+        })
+        atualizarUI()
     }
 
     if(ulTarefas) {

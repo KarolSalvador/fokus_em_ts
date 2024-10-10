@@ -106,6 +106,11 @@ const atualizarUI = () => {
         li.appendChild(paragraph)
         li.appendChild(button)
 
+        li.addEventListener('click', () => {
+            estadoInicial = selecionarTarefa(estadoInicial, tarefa)
+            atualizarUI()
+        })
+
         ulTarefas?.appendChild(li)
 
     })
